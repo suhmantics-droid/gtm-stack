@@ -1,0 +1,28 @@
+# Secrets - never commit
+.env
+.mcp.json
+service_account.json
+client_secret*.json
+*.pem
+*.key
+
+# Run output
+*.log
+gtm_formation_*.json
+company_domains.json
+companies.csv
+out/
+output/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.uv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

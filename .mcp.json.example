@@ -1,0 +1,34 @@
+{
+  "_comment": "Copy to .mcp.json. Replace <BUNDLE_DIR> with this folder's absolute path, and the uvx/npx paths with this machine's. Keys are read from .env (via dotenv-cli) — no secrets live in this file. parallel-search needs no key.",
+
+  "mcpServers": {
+    "companies-house": {
+      "command": "npx",
+      "args": ["-y", "dotenv-cli", "-e", "<BUNDLE_DIR>\\.env", "--", "npx", "-y", "companies-house-mcp-server"]
+    },
+    "firecrawl": {
+      "command": "npx",
+      "args": ["-y", "dotenv-cli", "-e", "<BUNDLE_DIR>\\.env", "--", "npx", "-y", "firecrawl-mcp"]
+    },
+    "tavily": {
+      "command": "npx",
+      "args": ["-y", "dotenv-cli", "-e", "<BUNDLE_DIR>\\.env", "--", "npx", "-y", "tavily-mcp"]
+    },
+    "parallel-search": {
+      "type": "http",
+      "url": "https://search.parallel.ai/mcp"
+    },
+    "google-workspace": {
+      "command": "uvx",
+      "args": ["workspace-mcp", "--single-user", "--tool-tier", "core"],
+      "env": {
+        "GOOGLE_CLIENT_SECRET_PATH": "<BUNDLE_DIR>\\client_secret.json",
+        "OAUTHLIB_INSECURE_TRANSPORT": "1"
+      }
+    },
+    "osm": {
+      "command": "uvx",
+      "args": ["osm-mcp-server"]
+    }
+  }
+}
