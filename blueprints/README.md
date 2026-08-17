@@ -50,6 +50,7 @@ Each blueprint follows the same shape:
 | 19 | [proposals-and-sow.md](proposals-and-sow.md) | Proposals + statement-of-work templates |
 | 20 | [client-onboarding.md](client-onboarding.md) | First-week intake, access, kickoff |
 | 21 | [case-study-capture.md](case-study-capture.md) | Turning a win into a reference asset |
+| 22 | [sales-enablement-system.md](sales-enablement-system.md) | Call-mined knowledge base, competency framework, claims policy |
 
 **Reference:** [glossary.md](glossary.md) - plain-English definitions.
 
@@ -57,7 +58,7 @@ The full **GTM Engineering system** (audit → play → freeze) is its own thing
 `../gtm-engineering/README.md`. These blueprints are the primitives it's built on.
 
 ## What's lived vs. recommended
-Honest labelling matters. Blueprints 1-6, 9, 11, 13, 14, 20 are grounded in what we **actually did**.
+Honest labelling matters. Blueprints 1-6, 9, 11, 13, 14, 20, 22 are grounded in what we **actually did**.
 12 (CRM), 15 (sequencing), 17 (dashboards), 19 (SOW), 21 (case study) are **recommended practice** we
 deliberately didn't run in-project - each says so in its "how it fits" section. Don't present
 recommended-practice docs as battle-tested.

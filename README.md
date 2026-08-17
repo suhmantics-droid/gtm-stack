@@ -35,7 +35,7 @@ This repo is the method for answering all three, plus the runners for the plays 
 
 | Path | What |
 |---|---|
-| `blueprints/` | 21 how-to blueprints plus a glossary. The full tradecraft. Start at [`blueprints/README.md`](blueprints/README.md) |
+| `blueprints/` | 22 how-to blueprints plus a glossary. The full tradecraft. Start at [`blueprints/README.md`](blueprints/README.md) |
 | `gtm-engineering/` | The audit, play, freeze system. Start at [`gtm-engineering/README.md`](gtm-engineering/README.md), then [`PLAYBOOK.md`](gtm-engineering/PLAYBOOK.md) |
 | `gtm-engineering/PLAYS.md` | The plays library. Every card carries a runner status, so you can see what is a button and what is still a strategy |
 | `gtm-engineering/EXAMPLE-audit.md` | A filled-in audit, so the output format is concrete |
@@ -81,7 +81,7 @@ pretending otherwise.
 ## Honest labelling
 
 Blueprints are marked for whether they are **lived** or **recommended practice**. Blueprints
-1-6, 9, 11, 13, 14 and 20 came out of work that actually ran. 12, 15, 17, 19 and 21 are
+1-6, 9, 11, 13, 14, 20 and 22 came out of work that actually ran. 12, 15, 17, 19 and 21 are
 recommended practice that was deliberately not run, and each says so in its own text.
 
 Do not present a recommended-practice document as battle-tested. The distinction is the point.

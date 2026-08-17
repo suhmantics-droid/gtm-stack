@@ -36,7 +36,7 @@ and templates.
 ## What's in this folder
 | Path | What |
 |---|---|
-| `blueprints/` | 21 how-to blueprints + glossary - the full tradecraft. Start at `blueprints/README.md`. |
+| `blueprints/` | 22 how-to blueprints + glossary - the full tradecraft. Start at `blueprints/README.md`. |
 | `gtm-engineering/` | The audit → play → freeze system. Start at `gtm-engineering/README.md`, then `PLAYBOOK.md`. |
 | `skills/` | The 3 generic skills: `gtm-audit`, `gtm-play`, `gtm-skill-builder`. |
 | `scripts/` | Runnable: `gtm_formation_signal.py` (CH signal), `sheets_api.py`, `sheets_helper.py`, `derive_domains.py`. |
