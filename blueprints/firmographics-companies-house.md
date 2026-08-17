@@ -1,13 +1,13 @@
-# Blueprint 2 — Firmographics (Companies House, UK)
+# Blueprint 2 - Firmographics (Companies House, UK)
 
 ## What it does
-Pulls verified company facts for UK entities — legal name, status, size class, incorporation date,
-SIC codes, officers/directors, persons with significant control, charges/filings — and surfaces
+Pulls verified company facts for UK entities - legal name, status, size class, incorporation date,
+SIC codes, officers/directors, persons with significant control, charges/filings - and surfaces
 **new-formation** and **officer-change** signals.
 
 ## Tools / scripts
-- **Companies House MCP** (`mcp__companies-house__*`) — good for small, interactive lookups.
-- **Companies House REST API** — for bulk. Key `COMPANIES_HOUSE_API_KEY`, HTTP Basic auth
+- **Companies House MCP** (`mcp__companies-house__*`) - good for small, interactive lookups.
+- **Companies House REST API** - for bulk. Key `COMPANIES_HOUSE_API_KEY`, HTTP Basic auth
   (key as username, empty password). Base `https://api.company-information.service.gov.uk`.
 - Scripts: `events_ch_lookup.py` (name → size-class, the reference pattern), `gtm_formation_signal.py`
   (new incorporations by SIC + date window, via `/advanced-search/companies`).
@@ -26,14 +26,14 @@ SIC codes, officers/directors, persons with significant control, charges/filings
 1. Get a free CH API key, add `COMPANIES_HOUSE_API_KEY` to `.env`.
 2. For interactive use, the MCP is enough. For anything bulk, copy the REST pattern from
    `events_ch_lookup.py` (env loader → `auth=(KEY, "")` → 429 retry → `ThreadPoolExecutor`).
-3. Pick the SIC codes that map to the new ICP — that's the one company-specific input.
+3. Pick the SIC codes that map to the new ICP - that's the one company-specific input.
 4. For signals, schedule `gtm_formation_signal.py` (or an officer-change poller) on a cadence.
 
 ## Gotchas / hard rules
-- **UK only.** No equivalent for US/EU here — outside the UK, fall back to Parallel/Tavily/Firecrawl.
-- **Subagents can't use the CH MCP** — use REST for bulk, keep MCP calls on the main thread.
+- **UK only.** No equivalent for US/EU here - outside the UK, fall back to Parallel/Tavily/Firecrawl.
+- **Subagents can't use the CH MCP** - use REST for bulk, keep MCP calls on the main thread.
 - Rate limit **600 requests / 5 min**; 4 threads is safe.
-- `search_companies` returns candidates — always best-match (active status + normalised-name overlap)
+- `search_companies` returns candidates - always best-match (active status + normalised-name overlap)
   before trusting a result; don't grab the first hit blindly.
 
 ## Cost

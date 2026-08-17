@@ -1,12 +1,12 @@
-# Blueprint 1 — Contact enrichment (email + phone)
+# Blueprint 1 - Contact enrichment (email + phone)
 
 ## What it does
 Takes a known person (name + company, or a LinkedIn URL) and returns a **verified** work
 email and/or direct phone, by querying providers in sequence and stopping at the first real hit.
 
 ## Tools / scripts
-- **Blitz** — work-email from a LinkedIn URL (`POST /v2/enrichment/email`, header `x-api-key`).
-- **Lusha** — emails + direct/mobile phones, credit-metered (`GET /v2/person`, header `api_key`).
+- **Blitz** - work-email from a LinkedIn URL (`POST /v2/enrichment/email`, header `x-api-key`).
+- **Lusha** - emails + direct/mobile phones, credit-metered (`GET /v2/person`, header `api_key`).
 - Local scripts: `enrich.py` (the waterfall), `lusha_poc_batch.py`, `enrich_emails.ps1`.
 - Verification helpers: brand-match against the company domain before recording.
 
@@ -31,10 +31,10 @@ email and/or direct phone, by querying providers in sequence and stopping at the
 6. Gate any credit-metered call behind an explicit human "yes" with a cost estimate.
 
 ## Gotchas / hard rules
-- **No pattern-guessed emails/phones/URLs — ever.** This is the rule the whole pipeline exists to enforce.
+- **No pattern-guessed emails/phones/URLs - ever.** This is the rule the whole pipeline exists to enforce.
 - **Verify the person** (name + location + role) before recording.
 - **Per-call OK for credit spend.** Show "N lookups × cost ≈ X credits (balance: Y). Proceed?".
-- Email **verification ≠ discovery** — a found address still needs an MX/validity check.
+- Email **verification ≠ discovery** - a found address still needs an MX/validity check.
 
 ## Cost
 Free paths first (scrape, CH, Parallel). Blitz ~per-call. Lusha ~4 credits/lookup. Budget by

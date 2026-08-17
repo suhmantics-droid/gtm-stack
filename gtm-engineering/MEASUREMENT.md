@@ -4,7 +4,7 @@ The loop PLAYBOOK §2 step 6 demands. A play without a fired/replied/converted r
 experiment you can't learn from. This file is the standard for closing that loop. `/gtm-play`
 sets it up when it runs a play; the client brief (`clients/<name>.md` §8) points at the results home.
 
-The discipline is deliberately lightweight — a sheet + a weekly reconcile, not a BI stack. The
+The discipline is deliberately lightweight - a sheet + a weekly reconcile, not a BI stack. The
 point is to make **kill-vs-scale** decisions on evidence, fast.
 
 ---
@@ -42,14 +42,14 @@ filled by the **reconcile** (below) + the operator.
 
 ## 3. The reconcile (how "sent" and "replied" get filled)
 
-Outreach is created as **drafts** (hard rule — never auto-sent). So the system can't assume a draft
+Outreach is created as **drafts** (hard rule - never auto-sent). So the system can't assume a draft
 was sent. Reconcile against Gmail truth on a cadence:
 
 1. **Sent:** pull Gmail **Sent** for the window (`search_gmail_messages` / Workspace MCP), match by
    recipient email → fill col G. A drafted-but-never-sent row stays blank in G (that itself is a
    signal: drafts piling up unsent = a throughput problem, not a play problem).
 2. **Replied:** search threads for replies from those recipients → fill col H.
-3. This is the same "pull Gmail Sent before EOD" muscle already standard here — reuse it.
+3. This is the same "pull Gmail Sent before EOD" muscle already standard here - reuse it.
 
 > Per memory: always pull **real** Gmail Sent + activity, never rely on recollection.
 
@@ -61,23 +61,23 @@ After each review window, one block per play:
 Play: <id/name>   Window: <dates>
 Sourced 120 → Enriched 96 (80%) → Tier1 31 → Sent 28 → Replied 6 (21%) → Meetings 2
 Cost: <£/credits spent>     Cost per meeting: <£>
-Verdict: SCALE / ITERATE / KILL  — <one-line why>
+Verdict: SCALE / ITERATE / KILL - <one-line why>
 ```
 
 ## 5. Kill-vs-scale rule of thumb
 
-Defaults — tune per client in the brief (§8):
+Defaults - tune per client in the brief (§8):
 - **Scale:** Actioned→Replied ≥ ~10% AND ≥1 meeting in the first ~25 actioned. Template it via `/gtm-skill-builder`.
 - **Iterate:** replies but no meetings → targeting/message off, not the signal. Change ONE variable, rerun.
 - **Kill:** < ~3% reply across ≥30 actioned → the signal isn't predictive for this ICP. Stop, free the budget.
 
-Always `log()` what you killed and why in the client brief §9 — a killed play is learning, not failure.
+Always `log()` what you killed and why in the client brief §9 - a killed play is learning, not failure.
 
 ## 6. Benchmarks to compare against (industry, not promises)
 
-From RESOURCES.md §2 — frame, don't guarantee:
-- Waterfall enrichment lifts valid-email rate ~55% → 90%+ (watch your Enriched% — if it's < ~70%, the enrichment chain, not the play, is the problem).
-- AI-augmented outbound: +15–20% pipeline at 40–60% lower cost/opp vs SDR-only.
+From RESOURCES.md §2 - frame, don't guarantee:
+- Waterfall enrichment lifts valid-email rate ~55% → 90%+ (watch your Enriched% - if it's < ~70%, the enrichment chain, not the play, is the problem).
+- AI-augmented outbound: +15-20% pipeline at 40-60% lower cost/opp vs SDR-only.
 
 ## 7. Anti-vanity rule
 

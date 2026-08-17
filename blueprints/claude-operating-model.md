@@ -1,15 +1,15 @@
-# Blueprint 8 — The Claude operating model (skills + memory + CLAUDE.md)
+# Blueprint 8 - The Claude operating model (skills + memory + CLAUDE.md)
 
 ## What it does
 The meta-blueprint: how Claude Code itself was set up to run all of the above as a repeatable
 operation, so a new person (or a new employer) can rebuild the *way of working*, not just the tools.
 
 ## The three pillars
-- **`CLAUDE.md`** (project root) — the always-loaded brief: what the project is, the providers,
+- **`CLAUDE.md`** (project root) - the always-loaded brief: what the project is, the providers,
   the data shape, the plan. The single doc that orients every session.
-- **Skills** (`.claude/skills/<name>/SKILL.md`) — one-command workflows (`/enrich`, `/qualify-batch`,
+- **Skills** (`.claude/skills/<name>/SKILL.md`) - one-command workflows (`/enrich`, `/qualify-batch`,
   `/gtm-audit`, …). Each is a frozen, proven pipeline with its own hard rules and run commands.
-- **Memory** (`memory/` + `MEMORY.md` index) — durable facts, preferences, and lessons that persist
+- **Memory** (`memory/` + `MEMORY.md` index) - durable facts, preferences, and lessons that persist
   across sessions: tool quirks, guardrails, what worked, what didn't.
 
 ## How we used it
@@ -20,7 +20,7 @@ operation, so a new person (or a new employer) can rebuild the *way of working*,
 - **Hard rules were enforced in code and in every skill**, not left to good intentions: no guessed
   data, per-call OK for spend, new-sheet-never-overwrite, drafts-not-sends.
 - **`update-config` / settings** handled the automation that memory can't (hooks, permissions),
-  since the harness — not the model — runs "whenever X, do Y" behaviours.
+  since the harness - not the model - runs "whenever X, do Y" behaviours.
 - **Skills were built with `skill-creator`** and kept namespaced so company-specific ones never
   shadowed generic tooling.
 
@@ -32,12 +32,12 @@ operation, so a new person (or a new employer) can rebuild the *way of working*,
    company-specific ones (house voice, ICP tiers).
 4. Register the MCP stack (`.mcp.json`) and keys (`.env`) per Blueprint 6.
 5. As you work: **write lessons to memory in the moment**, and **freeze proven workflows into skills.**
-   That loop is the actual asset — it compounds wherever you go.
+   That loop is the actual asset - it compounds wherever you go.
 
 ## Gotchas / hard rules
-- **Automation needs hooks, not memory** — "every time / whenever" behaviours live in settings.json.
-- **Don't write memory autonomously** for trivia — capture reusable facts, surfaced and confirmed.
-- **Keep secrets out of committed files** — `.env` + `.gitignore`, always.
+- **Automation needs hooks, not memory** - "every time / whenever" behaviours live in settings.json.
+- **Don't write memory autonomously** for trivia - capture reusable facts, surfaced and confirmed.
+- **Keep secrets out of committed files** - `.env` + `.gitignore`, always.
 - Namespace company-specific skills so they don't collide when you move.
 
 ## Cost
